@@ -1,0 +1,69 @@
+<form [formGroup]="playerForm" (ngSubmit)="onSubmit(playerForm.value)">
+  <h2 mat-dialog-title>Player FORM</h2>
+  <mat-dialog-content class="mat-typography">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Firstname</mat-label>
+        <input
+          matInput
+          placeholder="Jack"
+          type="text"
+          formControlName="firstName"
+          required
+        />
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Lastname</mat-label>
+        <input
+          matInput
+          placeholder="DUPONT"
+          type="text"
+          formControlName="lastName"
+          required
+        />
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Birth Year</mat-label>
+        <input
+          matInput
+          placeholder="2000"
+          type="number"
+          formControlName="birthYear"
+          required
+        />
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Team</mat-label>
+        <mat-select formControlName="team" required>
+          <mat-option *ngFor="let class of teams" [value]="class">
+            {{ teams }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  {{ playerForm.valid }}
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      type="submit"
+      cdkFocusInitial
+      [disabled]="!playerForm.valid"
+    >
+      {{ formAction }}
+    </button>
+  </mat-dialog-actions>
+</form>
