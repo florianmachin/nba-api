@@ -47,8 +47,8 @@
       <mat-form-field appearance="fill">
         <mat-label>Team</mat-label>
         <mat-select formControlName="team" required>
-          <mat-option *ngFor="let class of teams" [value]="class">
-            {{ teams }}
+          <mat-option *ngFor="let team of teams" [value]="team">
+            {{ team }}
           </mat-option>
         </mat-select>
       </mat-form-field>

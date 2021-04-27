@@ -30,13 +30,13 @@ export class TeamsDetailComponent implements OnInit {
 
     if (this.teamsId) {
       this.fetchData(this.teamsId);
-      this.fetchPlayer(this.teamsId);
+      // this.fetchPlayer(this.teamsId);
     }
   }
   fetchData(id: number): void {
     this.teams$ = this._teamsService.getById(id);
   }
   fetchPlayer(Player: Player): void {
-    this.players$ = this._teamsService.getByTeams(Player.team);
+    // this.players$ = this._teamsService.getByTeams(Player.team);
   }
 }

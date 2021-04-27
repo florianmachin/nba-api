@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  playerEndpoint: 'http://localhost:3000/players'
+  playerEndpoint: 'http://localhost:3000/players',
+  teamsEndpoint: 'http://localhost:3000/teams'
 
 };
 

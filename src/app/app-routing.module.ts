@@ -4,7 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'teams',
+    loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule),
+  },
+  {
+    path: 'players',
     loadChildren: () => import('./player/player.module').then(m => m.PlayerModule)
   },
   {

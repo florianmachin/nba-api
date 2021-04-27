@@ -1,0 +1,57 @@
+{{ teamss$ | async | json }}
+
+<table mat-table [dataSource]="teamss$ | async" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let teams">{{ teams.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let teams">{{ teams.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef>City</th>
+    <td mat-cell *matCellDef="let teams">{{ teams.city }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="conference">
+    <th mat-header-cell *matHeaderCellDef>Conference</th>
+    <td mat-cell *matCellDef="let teams">{{ teams.conference }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="detail">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let teams">
+      <button mat-icon-button (click)="openDetail(teams.id)">
+        <mat-icon>notes</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="update">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let teams">
+      <button mat-icon-button (click)="openDialog(true, teams)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let teams">
+      <button mat-icon-button (click)="delete(teams)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<button mat-fab color="warn" (click)="openDialog(false, undefined)">
+  <mat-icon>add</mat-icon>
+</button>

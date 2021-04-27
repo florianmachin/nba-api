@@ -5,15 +5,20 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayerService } from './services/http/player.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, SidenavComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [PlayerService],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, SidenavComponent]
 })
 export class CoreModule { }
