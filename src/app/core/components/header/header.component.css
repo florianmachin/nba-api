@@ -1,11 +1,12 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-.example-icon {
+.btn-menu {
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 mat-icon {
   color: white;
+}
+mat-toolbar{
+  border-radius: 10px;
+  justify-content: space-between;
 }

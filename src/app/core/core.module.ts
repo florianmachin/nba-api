@@ -8,7 +8,7 @@ import { PlayerService } from './services/http/player.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidenavComponent],
   imports: [
@@ -16,7 +16,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatToolbarModule,
     HttpClientModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [PlayerService],
   exports: [HeaderComponent, FooterComponent, SidenavComponent]
