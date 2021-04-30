@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  playerEndpoint: 'https://nba-api-back.herokuapp.com/players',
+  teamsEndpoint: 'https://nba-api-back.herokuapp.com/teams'
 };

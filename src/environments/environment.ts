@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  playerEndpoint: 'http://localhost:3000/players',
-  teamsEndpoint: 'http://localhost:3000/teams'
+  playerEndpoint: 'https://nba-api-back.herokuapp.com/players',
+  teamsEndpoint: 'https://nba-api-back.herokuapp.com/teams'
 
 };
 

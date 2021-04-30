@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "nba-api-3d7cc"
+  },
+  "targets": {
+    "nba-api-3d7cc": {
+      "hosting": {
+        "team-api": [
+          "nba-api-3d7cc"
+        ]
+      }
+    }
   }
 }
